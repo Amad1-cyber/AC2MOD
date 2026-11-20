@@ -1,0 +1,3 @@
+# objectId (hex), destinationCell (hex), x, y, z, note
+# Keyed routes can also append keyEntityDid (hex), lootSourceId (hex).
+# Add routes that correspond to your own map import.

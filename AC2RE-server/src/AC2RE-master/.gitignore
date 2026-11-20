@@ -1,0 +1,6 @@
+# Output
+[Bb]uild/
+
+# Project/editor files
+.vs/
+*.user

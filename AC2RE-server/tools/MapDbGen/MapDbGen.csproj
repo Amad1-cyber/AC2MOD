@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- MOD2: headless version of AC2RE.PacketTool's "GenerateMapDb" (the original is a WPF dialog tool).
+       It compiles the tool's own capture-reading code and writes map_obj.csv from packet captures. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MapDbGen</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\AC2RE-master\src\AC2RE.Definitions\AC2RE.Definitions.csproj" />
+    <ProjectReference Include="..\..\src\AC2RE-master\src\AC2RE.Utils\AC2RE.Utils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\src\AC2RE-master\src\AC2RE.PacketTool\Logs.cs" Link="Upstream\Logs.cs" />
+    <Compile Include="..\..\src\AC2RE-master\src\AC2RE.PacketTool\PacketUtil.cs" Link="Upstream\PacketUtil.cs" />
+    <Compile Include="..\..\src\AC2RE-master\src\AC2RE.PacketTool\Reader\*.cs" Exclude="..\..\src\AC2RE-master\src\AC2RE.PacketTool\Reader\PcapReader.cs" LinkBase="Upstream\Reader" />
+  </ItemGroup>
+
+</Project>

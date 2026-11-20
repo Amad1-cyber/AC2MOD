@@ -1,0 +1,42 @@
+# Local game and server files
+*.dat
+*.dat_server
+*.pcap
+*.pcapng
+*.log
+*.zip
+*.exe
+*.dll
+*.pdb
+*.ini
+*.keymap
+*.cfg
+*.flag
+*.pyc
+*.bak
+pkt_*_desc.txt
+accounts.json
+map_obj.csv
+obj_all.csv
+portals.csv
+servertime.dat
+/mysql-data/
+**/mysql-data/
+**/data/
+**/logs/
+**/pcaps/
+**/bin/
+**/obj/
+**/build/
+**/content-build/
+**/vitals-build/
+**/__pycache__/
+
+# Client installation and generated diagnostics
+/AC2 March 2024 Client/Content/
+/AC2 March 2024 Client/AC2RE/
+/AC2 March 2024 Client/Plugins/
+/AC2 March 2024 Client/Patches/
+/AC2 March 2024 Client/runac2/
+map-raw-*.csv
+map-import-*.csv

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AC2RE.Definitions\AC2RE.Definitions.csproj" />
+    <ProjectReference Include="..\AC2RE.Renderer\AC2RE.Renderer.csproj" />
+    <ProjectReference Include="..\AC2RE.RenderLib\AC2RE.RenderLib.csproj" />
+    <ProjectReference Include="..\AC2RE.Utils\AC2RE.Utils.csproj" />
+  </ItemGroup>
+
+</Project>

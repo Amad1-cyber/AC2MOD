@@ -1,0 +1,29 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Build AC2RE server
+        run: dotnet build 'AC2RE-server/src/AC2RE-master/src/AC2RE.Server/AC2RE.Server.csproj' -c Release
+      - name: Build map importer
+        run: dotnet build 'AC2RE-server/tools/MapDbGen/MapDbGen.csproj' -c Release
+      - name: Check Python syntax
+        run: python -m py_compile 'AC2 March 2024 Client/AC2MOD.pyw' 'AC2 March 2024 Client/ac2server/accounts.py' 'AC2 March 2024 Client/ac2server/ac2proto.py' 'AC2 March 2024 Client/ac2server/replay.py' 'AC2 March 2024 Client/ac2server/server.py' 'AC2RE-server/tools/make_map_csv.py'
